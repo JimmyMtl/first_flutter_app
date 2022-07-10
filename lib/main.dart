@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'common/pages/home_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const App());
 }
 
 class Palette {
@@ -22,164 +23,172 @@ class Palette {
   );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      // ignore: unnecessary_new
       theme: ThemeData(
-        scaffoldBackgroundColor: Palette.kToDark,
+        scaffoldBackgroundColor: const Color.fromARGB(255, 17, 24, 39),
         primarySwatch: Palette.kToDark,
       ),
-      home: const MyHomePage(title: 'Flutatter Demo Home Page'),
+      home: const HomeScreen(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+// class MyHomePage extends StatefulWidget {
+//   const MyHomePage({Key? key, required this.title}) : super(key: key);
 
-  final String title;
+//   final String title;
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
+//   @override
+//   State<MyHomePage> createState() => _MyHomePageState();
+// }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  int _value = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
-  void _incrementValue() {
-    setState(() {
-      _value += 3;
-    });
-  }
 
-  void showAlert(BuildContext context) {
-    showDialog(
-        context: context,
-        builder: (context) => const AlertDialog(content: Text("hi !")));
-  }
+// class _MyHomePageState extends State<MyHomePage> {
+//   int _counter = 0;
+//   int _value = 0;
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      // appBar: AppBar(
-      //     title: Image.asset(
-      //       'assets/images/logo.png',
-      //       fit: BoxFit.contain,
-      //       width: 100,
-      //     ),
-      //     centerTitle: true,
-      //     automaticallyImplyLeading: true),
-      bottomNavigationBar: ClipRRect(
-        borderRadius: const BorderRadius.only(
-          topRight: Radius.circular(15),
-          topLeft: Radius.circular(15),
-        ),
-        child: BottomNavigationBar(
-            backgroundColor: Colors.grey.shade900,
-            selectedItemColor: Colors.grey.shade500,
-            unselectedItemColor: Colors.grey.shade700,
-            type: BottomNavigationBarType.fixed,
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(Icons.call),
-                label: 'Calls',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.camera),
-                label: 'Camera',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.chat),
-                label: 'Chats',
-              ),
-              BottomNavigationBarItem(
-                icon: ImageIcon(
-                  AssetImage("assets/images/logo.png"),
-                  color: Colors.red,
-                ),
-                label: 'Profil',
-              ),
-            ]),
-      ),
-      body: Center(
-        child: Column(
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: const TextStyle(color: Colors.white),
-            ),
-            const Text(
-              'New teTextStyle(color:Colors.white)',
-              style: TextStyle(color: Colors.white),
-            ),
-            Text(
-              '$_value TextStyle(color:Colors.white)',
-              style: const TextStyle(color: Colors.white),
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementValue,
-        tooltip: 'Increment',
-        child: const Icon(Icons.abc_sharp),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-}
+//   void _incrementCounter() {
+//     setState(() {
+//       _counter++;
+//     });
+//   }
 
-class FirstRoute extends StatelessWidget {
-  const FirstRoute({super.key});
+//   void _incrementValue() {
+//     setState(() {
+//       _value += 3;
+//     });
+//   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('First Route'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          child: const Text('Open route'),
-          onPressed: () {
-            // Navigate to second route when tapped.
-          },
-        ),
-      ),
-    );
-  }
-}
+//   void showAlert(BuildContext context) {
+//     showDialog(
+//         context: context,
+//         builder: (context) => const AlertDialog(content: Text("hi !")));
+//   }
 
-class SecondRoute extends StatelessWidget {
-  const SecondRoute({super.key});
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       // appBar: AppBar(
+//       //     title: Image.asset(
+//       //       'assets/images/logo.png',
+//       //       fit: BoxFit.contain,
+//       //       width: 100,
+//       //     ),
+//       //     centerTitle: true,
+//       //     automaticallyImplyLeading: true),
+      // bottomNavigationBar: ClipRRect(
+      //   borderRadius: const BorderRadius.only(
+      //     topRight: Radius.circular(15),
+      //     topLeft: Radius.circular(15),
+      //   ),
+      //   child: BottomNavigationBar(
+      //       backgroundColor: Colors.grey.shade900,
+      //       selectedItemColor: Colors.grey.shade200,
+      //       unselectedItemColor: Colors.grey.shade700,
+      //       type: BottomNavigationBarType.fixed,
+      //       items: <BottomNavigationBarItem>[
+      //         const BottomNavigationBarItem(
+      //           icon: Icon(Icons.call),
+      //           label: 'Calls',
+      //         ),
+      //         const BottomNavigationBarItem(
+      //           icon: Icon(Icons.camera),
+      //           label: 'Camera',
+      //         ),
+      //         const BottomNavigationBarItem(
+      //           icon: Icon(Icons.chat),
+      //           label: 'Chats',
+      //         ),
+      //         BottomNavigationBarItem(
+      //           icon: ImageIcon(
+      //             const Image(
+      //                 image: AssetImage(
+      //               "assets/images/profile.png",
+      //             )).image,
+      //             size: 48,
+      //           ),
+      //           label: 'Profil',
+      //         ),
+      //       ]),
+      // ),
+//       body: Center(
+//         child: Column(
+//           children: <Widget>[
+//             const Text(
+//               'You have pushed the button this many times:',
+//             ),
+//             Text(
+//               '$_counter',
+//               style: const TextStyle(color: Colors.white),
+//             ),
+//             const Text(
+//               'New teTextStyle(color:Colors.white)',
+//               style: TextStyle(color: Colors.white),
+//             ),
+//             Text(
+//               '$_value TextStyle(color:Colors.white)',
+//               style: const TextStyle(color: Colors.white),
+//             ),
+//           ],
+//         ),
+//       ),
+//       floatingActionButton: FloatingActionButton(
+//         onPressed: _incrementValue,
+//         tooltip: 'Increment',
+//         child: const Icon(Icons.abc_sharp),
+//       ), // This trailing comma makes auto-formatting nicer for build methods.
+//     );
+//   }
+// }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Second Route'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            // Navigate back to first route when tapped.
-          },
-          child: const Text('Go back!'),
-        ),
-      ),
-    );
-  }
-}
+// class FirstRoute extends StatelessWidget {
+//   const FirstRoute({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('First Route'),
+//       ),
+//       body: Center(
+//         child: ElevatedButton(
+//           child: const Text('Open route'),
+//           onPressed: () {
+//             // Navigate to second route when tapped.
+//           },
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// class SecondRoute extends StatelessWidget {
+//   const SecondRoute({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('Second Route'),
+//       ),
+//       body: Center(
+//         child: ElevatedButton(
+//           onPressed: () {
+//             // Navigate back to first route when tapped.
+//           },
+//           child: const Text('Go back!'),
+//         ),
+//       ),
+//     );
+//   }
+// }
