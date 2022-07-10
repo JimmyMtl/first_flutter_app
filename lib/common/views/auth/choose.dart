@@ -10,7 +10,7 @@ class Choose extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 72),
+              padding: const EdgeInsets.only(top: 58),
               child: Container(
                 width: 200,
                 height: 100,

@@ -19,7 +19,7 @@ class _LoginState extends State<Login> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.only(top: 5),
               child: Row(
                 children: [
                   TextButton(
